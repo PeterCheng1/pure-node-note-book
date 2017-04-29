@@ -9,11 +9,17 @@
     //     res: response,
     //     resCtx: {}
     // }参数格式
+    const Url = require('url');
 
     module.exports = (ctx) => {
         let { method, url } = ctx.req;
         let { reqCtx } = ctx;
+        /*
+         * query是对象
+         * pathname是路径
+        */
         method = method.toLowerCase();
+        Object.assign(reqCtx,Url.parse(url,true),{method:method});
         return Promise.resolve({
             then: (resolve, reject) => {
                 if (method === 'post') {

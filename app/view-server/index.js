@@ -13,14 +13,14 @@ const urlrewriteMap = require('./urlrewrite');
 
 
 module.exports = (ctx) => {
-    let { req, resCtx } = ctx;
-    let { url } = req;
+    let { reqCtx, resCtx } = ctx;
+    let { pathname } = reqCtx;
     return Promise.resolve().then(() => {
-        if (url.match('action') || url.match(/\./)) {
+        if (pathname.match('action') || pathname.match(/\./)) {
             return;
         } else {
             const viewPath = path.resolve(__dirname, 'ejs');
-            let ejsName = urlrewriteMap[url];
+            let ejsName = urlrewriteMap[pathname];
             if (ejsName) {
                 let layoutPath = path.resolve(viewPath, 'layout.ejs');
                 let layoutHtml = fs.readFileSync(layoutPath, 'utf8');
@@ -29,7 +29,7 @@ module.exports = (ctx) => {
                     filename: layoutPath
                 })
                 let html = render({
-                    templateName: ejsName,
+                    viewName: ejsName,
                     hasUser : resCtx.hasUser
                 })
                 resCtx.headers = Object.assign(resCtx.headers, {

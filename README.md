@@ -12,11 +12,15 @@
 
 <h5>es6: 采取ES6语法,由于chrome的V8引擎几乎完美支持ES6和部分ES7，因此在写Node的时候绝大部分采取ES6风格代码</h5>
 
-<h5>JQuery ：处理前端逻辑</h5>
+<h5>react ：优秀前端框架</h5>
+
+<h5>蚂蚁金服UI框架 ： 优秀react UI库</h5>
 
 <h5>SCSS : css预处理语言处理前端样式</h5>
 
 <h5>MongoDB : 非关系数据库</h5>
+
+<h5>Mongoose : MongoDB的ORM，方便操作MongoDB数据库</h5>
 
 ```
 install dependencies

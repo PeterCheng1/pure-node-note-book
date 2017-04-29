@@ -22,15 +22,23 @@
 
 	const CookieParser = require('./app/cookie-parser');
 
-	server.use(CookieParser);
-
+	//中间件
 	server.use(urlParser);
+
+	server.use(CookieParser);
 
 	server.use(apiServer);
 
 	server.use(staticServer);
 
 	server.use(viewServer);
+
+	//引入mongoose
+	const mongoose = require('mongoose');
+	mongoose.Promise = global.Promise;
+	mongoose.connect('mongodb://localhost/blogDB');
+	mongoose.connection.on('error', () => { console.log('error happen for db') })
+	    .once('open', () => { console.log('we are connect') });
 
 	//启动app
 	http.createServer(server.initServer()).listen(PORT, () => {
