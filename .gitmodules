@@ -1,6 +1,6 @@
 [submodule "public"]
 	path = public
-	url = https://github.com/PeterCheng1/pure-node-note-book-fe.git
+	url = https://github.com/slashhuang/pure-node-notebook-fe.git
 [submodule "pure-node-note-book-fe"]
 	path = pure-node-note-book-fe
 	url = https://github.com/PeterCheng1/pure-node-note-book-fe.git

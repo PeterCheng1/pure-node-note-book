@@ -2,10 +2,12 @@
 *创建model @author Sheldon-Yee 
 */
 const mongoose = require('mongoose')
-const {blogSchema,categorySchema} = require('./schema');
+const {blogSchema,categorySchema} = require('./schema');//获取相关数据骨架，Schema
 //第一个参数表明collection的名字，
-const BlogModel = mongoose.model('Blog',blogSchema);
-const CategroyModel = mongoose.model('Category',categorySchema);
+const BlogModel = mongoose.model('Blog',blogSchema);//生成BolgModel，对应mongoDB的document
+const CategroyModel = mongoose.model('Category',categorySchema);//生成CategoryModel，对应mongoDB的document
+
+//分别定义不同数据库操作方法
 const $_saveBlog = blog =>{
     return new BlogModel(blog).save().then(_blog=>{
         return {

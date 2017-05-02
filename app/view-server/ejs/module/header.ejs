@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <meta name="baidu-tc-verification" content="de5877bb8a9756ef3aa8217110e60ef2" />
     <title>SheldonYee的技术博客</title>
-    <link rel="stylesheet" href="./build/dist/common.css">
-    <link rel="stylesheet" href="./build/dist/<%- viewName%>.css">
+    <link rel="stylesheet" href="/dist/common.css">
+    <link rel="stylesheet" href="/dist/<%- viewName%>.css">
 </head>
 <body>
 <div class='header clear-fix'>
@@ -43,3 +43,12 @@
 		</li>
 	</ul>
 </div>
+<script type="text/javascript">
+    Object.defineProperty(window, 'hasUser', {
+        configurable:false,
+        enumerable:false,
+        value:<%- hasUser%>,
+        writable:false
+    })
+</script>
+

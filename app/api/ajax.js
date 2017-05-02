@@ -3,6 +3,9 @@
 * @Author SheldonYee
 */
 
+//获取router，将相应的path和handle对应起来，并且存入router映射表中
+//mongo文件主要是用mongoose定义了数据库相关方法
+
 let Router = require('./router');
 
 let {$_saveBlog , $_saveCategroy} = require('./mongo');

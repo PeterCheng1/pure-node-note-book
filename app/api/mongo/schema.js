@@ -1,6 +1,7 @@
 /*
 *创建schema @author Sheldon-Yee 
 */
+//分别定义了blog和blogCategory的Schema，即数据骨架
 
 let mongoose , {Schema} = require('mongoose');
 
