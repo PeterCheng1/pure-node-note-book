@@ -1,7 +1,9 @@
 /*
  *api server @author:Sheldon-Yee
  */
-
+//当处理程序进入到此中间件,首先require到路由和ajax文件，而ajax文件主要是对路由文件的Router
+//的映射表存入对应的pathName和对应的handle,待handle处理程序处理完毕将程序返回给后序的then
+//返回给前端
 let Router = require('./router');
 require('./ajax');
 module.exports = (ctx) => {
