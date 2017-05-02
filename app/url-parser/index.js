@@ -9,6 +9,8 @@
     //     res: response,
     //     resCtx: {}
     // }参数格式
+    // 首先拿到url ==> 然后用url核心模块去解析url ==> 合成进ctx.reqCtx里面供后序处理程序使用
+    //，另外如果是post方法就监听data然后获取，最后将数据存值在body上
     const Url = require('url');
 
     module.exports = (ctx) => {
@@ -19,7 +21,7 @@
          * pathname是路径
         */
         method = method.toLowerCase();
-        Object.assign(reqCtx,Url.parse(url,true),{method:method});
+        Object.assign(reqCtx,Url.parse(url,true),{method:method});//通过url.parser来解析url，然后将解析的对象加进ctx.reqCtx供给后面的程序使用
         return Promise.resolve({
             then: (resolve, reject) => {
                 if (method === 'post') {

@@ -11,7 +11,6 @@
 
 	const server = new app();
 
-	//中间件
 	const urlParser = require('./app/url-parser');
 
 	const apiServer = require('./app/api');

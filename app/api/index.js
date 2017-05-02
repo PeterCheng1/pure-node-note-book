@@ -6,7 +6,7 @@ let Router = require('./router');
 require('./ajax');
 module.exports = (ctx) => {
     let { resCtx, reqCtx } = ctx;
-    let {pathname} = reqCtx;
+    let {pathname} = reqCtx;//将url调整为使用pathname
         //Situation 1:Promise.resolve([]);
         //Situation 2:Promise.resolve(undefined); 
     return Promise.resolve({

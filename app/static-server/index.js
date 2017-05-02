@@ -18,7 +18,7 @@
 
 
 	let staticFun = ctx => {
-	        let { pathname } = ctx.reqCtx;
+	        let { pathname } = ctx.reqCtx;//将url调整为使用pathname
 	        let { resCtx } = ctx;
 	        return new Promise((resolve, reject) => {
 	            if (pathname.match(/\./) && !pathname.match('action')) {

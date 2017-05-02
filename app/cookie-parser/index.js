@@ -2,12 +2,12 @@
  * Cookie-parser 处理Cookie
  * Author:Sheldon-Yee
  */
-
+//当流程进入到cookie-Parser的时候，
 //映射表 ejs动态渲染数据
 const cookie_parser = require('cookie');
 const whiteName = ['/name_SheldonYee'] //设置白名单，即是可以登录的名单
 module.exports = (ctx) => {
-    let { pathname } = ctx.reqCtx;
+    let { pathname } = ctx.reqCtx;//将url调整为使用pathname
     let { cookie } = ctx.req.headers;
     let { resCtx, res } = ctx;
     let cookieObj = cookie_parser.parse(cookie);
