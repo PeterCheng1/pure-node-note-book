@@ -37,13 +37,9 @@
 
 >介绍中间件:
 1.static-server：主要是处理img，css，js等静态资源，整个中间遵循Promise风格，因为在主程输入口，被编写为类koa的风格
-
 2.api-server:处理前端发送过来ajax请求，当前端将请求发送过来，通过报文的主要信息使用mongoose这个Promise风格的库操作mongoDB数据库，然后返回数据
-
 3.cookie-parser:由于HTTP协议是无状态协议，当我们需要和客户端进行session的时候，我们需要cookie帮助我们保存状态，因此这个中间件，通过设置白名单机制来控制登录处理，用HttpOnly来方式XSS脚本注入攻击，用max-age来规定cookie保存时间
-
 4.url-parser:这个中间件是用来处理前端通过post请求，通过流的方式，取得post请求的数据，然后将数据送到api-server中间件进行数据库处理
-
 5.view-server:这个中间件主要负责服务端渲染，使用ejs模板语言根据URI来做出不同渲染，而且还处理了重定向的问题
 
 ```
