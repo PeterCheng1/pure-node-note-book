@@ -27,7 +27,7 @@
 
 <h2>效果图</h2>
 
-![效果图]('./photo/node.gif')
+![效果图]('./photo/node.gif');
 
 
 ```
