@@ -36,6 +36,7 @@
 <p>由于项目没有使用类似express和koa等node的web服务器框架，而且所有中间件都是根据实际需求自行编写的.</p>
 
 <h2>介绍中间件:</h2>
+
 1.static-server：主要是处理img，css，js等静态资源，整个中间遵循Promise风格，因为在主程输入口，被编写为类koa的风格
 
 2.api-server:处理前端发送过来ajax请求，当前端将请求发送过来，通过报文的主要信息使用mongoose这个Promise风格的库操作mongoDB数据库，然后返回数据
